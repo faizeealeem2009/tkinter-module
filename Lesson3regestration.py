@@ -50,5 +50,6 @@ R1.grid(row=7,column=0)
 R2=Radiobutton(root,value="Female",textvariable=gender)
 R2.grid(row=7,column=1)
 
-
+L9=Label(root,text="Select Hobbies",font=("Calibri",16,"bold"))
+L9.grid(row=8,column=0,columnspan=2)
 root.mainloop()
