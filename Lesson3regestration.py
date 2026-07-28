@@ -3,13 +3,25 @@ from tkinter import *
 def submit_data():
     pass
 
+def showhidepass1():
+    if mypass1.get():
+        E5.config(show="")
+    else:
+        E5.config(show="*")
 
+def showhidepass2():
+    if mypass2.get():
+        E6.config(show="")
+    else:
+        E6.config(show="*")
 root=Tk()
 root.title("Student Regestration Form")
 #root.geometry("600x400")
 root.resizable(False,False)
 
 gender=StringVar()
+mypass1=BooleanVar()
+mypass2=BooleanVar()
 
 
 L1=Label(root,text="Student Regestration Form",font=("Calibri",20,"bold"))
@@ -54,7 +66,6 @@ R1.grid(row=7,column=0)
 R2=Radiobutton(root,value="Female",textvariable=gender)
 R2.grid(row=7,column=1)
 
-<<<<<<< HEAD
 L9=Label(root,text="Select Hobbies:",font=("Calibri",16,"bold"))
 L9.grid(row=8,column=0,columnspan=2)
 
@@ -71,19 +82,21 @@ L10=Label(root,text="Type password: ",font=("Calibri",16,"bold"))
 L10.grid(row=12,column=0,columnspan=2)
 
 E5=Entry(root,font=("Calibri",14,"normal"),show="*")
-E5.grid(row=13,column=0,padx=10,pady=10,columnspan=2)
+E5.grid(row=13,column=0,padx=10,pady=10)
+
+C4=Checkbutton(root,text="Show/Hide Password",variable=mypass1,font=("Calibri",14,"bold"),command=showhidepass1)
+C4.grid(row=13,column=1)
 
 L11=Label(root,text="Verify password: ",font=("Calibri",16,"bold"))
 L11.grid(row=14,column=0,columnspan=2)
 
 E6=Entry(root,font=("Calibri",14,"normal"),show="*")
-E6.grid(row=15,column=0,padx=10,pady=10,columnspan=2)
+E6.grid(row=15,column=0,padx=10,pady=10)
+
+C5=Checkbutton(root,text="Show/Hide Password",variable=mypass2,font=("Calibri",14,"bold"),command=showhidepass2)
+C5.grid(row=15,column=1)
 
 B1=Button(root,text="Submit",command=submit_data,font=("Calibri",14,"bold"),padx=50,pady=5)
 B1.grid(row=16,column=0,padx=10,pady=10,columnspan=2)
 
-=======
-L9=Label(root,text="Select Hobbies",font=("Calibri",16,"bold"))
-L9.grid(row=8,column=0,columnspan=2)
->>>>>>> becd704d657258786d5a22b7005a43f2eb316fab
 root.mainloop()
