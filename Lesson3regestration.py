@@ -54,6 +54,7 @@ R1.grid(row=7,column=0)
 R2=Radiobutton(root,value="Female",textvariable=gender)
 R2.grid(row=7,column=1)
 
+<<<<<<< HEAD
 L9=Label(root,text="Select Hobbies:",font=("Calibri",16,"bold"))
 L9.grid(row=8,column=0,columnspan=2)
 
@@ -81,4 +82,8 @@ E6.grid(row=15,column=0,padx=10,pady=10,columnspan=2)
 B1=Button(root,text="Submit",command=submit_data,font=("Calibri",14,"bold"),padx=50,pady=5)
 B1.grid(row=16,column=0,padx=10,pady=10,columnspan=2)
 
+=======
+L9=Label(root,text="Select Hobbies",font=("Calibri",16,"bold"))
+L9.grid(row=8,column=0,columnspan=2)
+>>>>>>> becd704d657258786d5a22b7005a43f2eb316fab
 root.mainloop()
