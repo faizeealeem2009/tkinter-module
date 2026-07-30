@@ -1,32 +1,53 @@
 from tkinter import *
 from tkinter import messagebox
+import csv
+'''
+with open("register.csv","w",newline="") as f1:
+    csvWriter=csv.writer(f1)
+    csvWriter.writerow(["First Name","Last Name","Address","City","Gender","Hobbies","Password"])
 
+'''
 def submit_data():
     if fname.get()=="" or lname.get()=="" or address.get()=="" or city.get()=="" or passvalue1.get()=="" or passvalue2.get()=="":
         messagebox.showerror("Invalid or missing Input","Please Enter All the values!")
     elif passvalue1.get()!=passvalue2.get():
         messagebox.showwarning("Password Warning","Password Does not Match!")
     else:
-        print(fname.get())
-        print(lname.get())
-        print(address.get())
-        print(city.get())
-        print(gender.get())
+        firstname=fname.get()
+        lastname=lname.get()
+        add=address.get()
+        ct=city.get()
+        gd=gender.get()
+        hobbies=""
         if cricket.get():
-            print("Cricket")
+            hobbies+="Cricket "
         else:
             pass
 
         if Football.get():
-            print("Football")
+            hobbies+="Football "
         else:
             pass
 
         if chess.get():
-            print("Chess")
+            hobbies+="Chess "
         else:
             pass
 
+        passwd=passvalue1.get()
+
+        regdata=[firstname,lastname,gd,add,ct,hobbies,passwd]
+
+        with open("register.csv","a",newline="") as f1:
+            csvWriter=csv.writer(f1)
+            csvWriter.writerow(regdata)
+            messagebox.showinfo("New Record","One record added to file!")
+            E1.delete(0,END)
+            E2.delete(0,END)
+            E3.delete(0,END)
+            E4.delete(0,END)
+            E5.delete(0,END)
+            E6.delete(0,END)
 
 def showhidepass1():
     if mypass1.get():
