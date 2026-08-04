@@ -2,50 +2,56 @@ from tkinter import *
 from tkinter import ttk
 import csv
 from tkinter import messagebox
-
-
-
+''' 
+with open("employees.csv","w",newline="") as f1:
+    writer=csv.writer(f1)
+    writer.writerow(["First Name","Last Name","Gender","City","Education","Experience","Job Profile","Department","Basic Salary","Skills","Gross Salary","Allowances","Tax","Net Salary"])
+    f1.close()
+'''
 
 def submit_data():
-    if (
-        firstname.get() == ""
-        or lastname.get() == ""
-        or city.get() == ""
-        or gender.get() == ""
-        or education.get() == ""
-        or experience.get() == ""
-        or job.get() == ""
-        or dep.get() == ""
-        or basic_salary.get() == ""
-    ):
-        messagebox.showerror("Invalid or missing input","Please Enter all the values!")
-        return
-    try:
-        basic_salary_value=int(basic_salary.get())
-    except ValueError:
-        messagebox.showerror("Invalid Salary","Please enter a valid number for basic salary.")
-        return
-    basic_salary=int(salary.get())
+    basic_salary_value=int(salary.get())
     allowances=basic_salary_value*0.2
-    gross_salary=(allowances+basic_salary_value)*12
-    if gross_salary>=1200000:
+    gross_salary=(allowances + basic_salary_value)*12
+    if gross_salary >= 1200000:
         tax=gross_salary*0.1
-    elif gross_salary>=800000:
+    elif gross_salary >= 800000:
         tax=gross_salary*0.08
-    elif gross_salary>=600000:
+    elif gross_salary >= 600000:
         tax=gross_salary*0.06
-    elif gross_salary>=400000:
+    elif gross_salary >= 400000:
         tax=gross_salary*0.04
     else:
         tax=0
-    net_salary=gross_salary-tax
+    net_salary=gross_salary - tax
     selected_skill=[]
     if skill1.get():
         selected_skill.append("Python")
     if skill2.get():
         selected_skill.append("Excel")
     if skill3.get():
-        selected_skill.append("JavaScript")    
+        selected_skill.append("Graphic Designing")
+
+    with open("employees.csv","a",newline="") as csvfile:
+        writer=csv.writer(csvfile)
+        writer.writerow([
+            firstname.get(),
+            lastname.get(),
+            gender.get(),
+            city.get(),
+            education.get(),
+            experience.get(),
+            job.get(),
+            dep.get(),
+            basic_salary_value,
+            selected_skill,
+            gross_salary,
+            allowances,
+            tax,
+            net_salary,
+        ])
+        csvfile.close()
+    messagebox.showinfo("Success","Employee data submitted successfully.")
 
 root=Tk()
 root.title("HR Data Management")

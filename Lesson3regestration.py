@@ -5,7 +5,7 @@ import csv
 with open("register.csv","w",newline="") as f1:
     csvWriter=csv.writer(f1)
     csvWriter.writerow(["First Name","Last Name","Address","City","Gender","Hobbies","Password"])
-
+    f1.close()
 '''
 def submit_data():
     if fname.get()=="" or lname.get()=="" or address.get()=="" or city.get()=="" or passvalue1.get()=="" or passvalue2.get()=="":
@@ -48,7 +48,7 @@ def submit_data():
             E4.delete(0,END)
             E5.delete(0,END)
             E6.delete(0,END)
-
+            f1.close()
 def showhidepass1():
     if mypass1.get():
         E5.config(show="")
