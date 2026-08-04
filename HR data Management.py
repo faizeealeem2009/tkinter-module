@@ -2,40 +2,51 @@ from tkinter import *
 from tkinter import ttk
 import csv
 from tkinter import messagebox
-with open("employees.csv","w",newline="") as f1:
-    csvWriter=csv.writer(f1)
-    csvWriter.writerow(["First Name","Last Name","City","Gender","Education","Experience","Job Profile","Department","Skill","Basic Salary"])
+
+
 
 
 def submit_data():
-    fname=firstname.get()
-    lname=lastname.get()
-    ct=city.get()
-    gd=gender.get()
-    ed=education.get()
-    exp=experience.get()
-    jb=job.get()
-    dp=dep.get()
-    skill=""
+    if (
+        firstname.get() == ""
+        or lastname.get() == ""
+        or city.get() == ""
+        or gender.get() == ""
+        or education.get() == ""
+        or experience.get() == ""
+        or job.get() == ""
+        or dep.get() == ""
+        or basic_salary.get() == ""
+    ):
+        messagebox.showerror("Invalid or missing input","Please Enter all the values!")
+        return
+    try:
+        basic_salary_value=int(basic_salary.get())
+    except ValueError:
+        messagebox.showerror("Invalid Salary","Please enter a valid number for basic salary.")
+        return
+    basic_salary=int(salary.get())
+    allowances=basic_salary_value*0.2
+    gross_salary=(allowances+basic_salary_value)*12
+    if gross_salary>=1200000:
+        tax=gross_salary*0.1
+    elif gross_salary>=800000:
+        tax=gross_salary*0.08
+    elif gross_salary>=600000:
+        tax=gross_salary*0.06
+    elif gross_salary>=400000:
+        tax=gross_salary*0.04
+    else:
+        tax=0
+    net_salary=gross_salary-tax
+    selected_skill=[]
     if skill1.get():
-        skill+="Python "
-    else:
-        pass
+        selected_skill.append("Python")
     if skill2.get():
-        skill+="Excel "
-    else:
-        pass
+        selected_skill.append("Excel")
     if skill3.get():
-        skill+="Graphic Designing "
-    else:
-        pass
-    bs=basic.get()
-    
-    empdata=[fname,lname,ct,gd,ed,exp,jb,dp,skill,bs]
-    with open("employees.csv","a",newline="") as f1:
-            csvWriter=csv.writer(f1)
-            csvWriter.writerow(empdata)
-            messagebox.showinfo("New Record","One record added to file!")
+        selected_skill.append("JavaScript")    
+
 root=Tk()
 root.title("HR Data Management")
 #root.geometry("600x400")
@@ -50,11 +61,11 @@ experience=StringVar()
 job=StringVar()
 dep=StringVar()
 skill=StringVar()
-basic=IntVar()
+salary=StringVar()
 
 experience=StringVar()
-selected=list(range(16))
-experience.set(selected[2])
+select_exp=list(range(16))
+experience.set(select_exp[2])
 
 
 sel_educ=["HSC","B.Com","B.Voc","BCA","B.Sc","M.Sc","B.E","MCA"]
@@ -112,7 +123,7 @@ L11.grid(row=8,column=0)
 L12=Label(root,text="Job Profile:",font=("Calibri",14,"normal"))
 L12.grid(row=8,column=1,padx=10,pady=10)
 
-E5=ttk.Combobox(root,font=("Calibri",14,"normal"),textvariable=experience,values=selected)
+E5=ttk.Combobox(root,font=("Calibri",14,"normal"),textvariable=experience,values=select_exp)
 E5.grid(row=9,column=0)
 
 E6=Entry(root,font=("Calibri",14,"normal"),textvariable=job)
@@ -127,7 +138,7 @@ L12.grid(row=10,column=1,padx=10,pady=10)
 E7=Entry(root,font=("Calibri",14,"normal"),textvariable=dep)
 E7.grid(row=11,column=0,padx=10,pady=10)
 
-E8=Entry(root,font=("Calibri",14,"normal"),textvariable=basic)
+E8=Entry(root,font=("Calibri",14,"normal"),textvariable=salary)
 E8.grid(row=11,column=1,padx=10,pady=10)
 
 L13=Label(root,text="Select Skills:",font=("Calibri",14,"bold"))
