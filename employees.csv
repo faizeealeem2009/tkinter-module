@@ -1,3 +1,26 @@
 First Name,Last Name,Gender,City,Education,Experience,Job Profile,Department,Basic Salary,Skills,Gross Salary,Allowances,Tax,Net Salary
-Faizee,Aleem,Male,Malegaon,B.Voc,2,Manager,Management,50000,"['Python', 'Excel']",720000.0,10000.0,43200.0,676800.0
-Faizee,Abdullah,Male,Malegaon,HSC,2,Manager,Management,60000,"['Python', 'Graphic Designing']",864000.0,12000.0,69120.0,794880.0
+Faizee,Aleem,Male,Malegaon,B.Voc,2,Manager,Management,50000,"Python, Excel",720000,10000,43200,676800
+Faizee,Abdullah,Male,Malegaon,HSC,2,Manager,Management,60000,"Python, Graphic Designing",864000,12000,69120,794880
+Aarav,Sharma,Male,Aurangabad,B.Tech,3,Software Engineer,IT,400000,"Python, Excel",500000,100000,60000,440000
+Vivaan,Patel,Male,Aurangabad,B.Tech,9,HR Executive,HR,700000,"Python, Graphic Designing",770000,70000,92400,677600
+Aditya,Khan,Male,Nashik,BCA,1,Accountant,Finance,750000,"Python, Excel",900000,150000,108000,792000
+Arjun,Shaikh,Male,Mumbai,BCA,7,Data Analyst,Analytics,350000,"Excel, Graphic Designing",450000,100000,54000,396000
+Rahul,Singh,Male,Pune,MBA,9,Sales Executive,Sales,900000,"Python, Graphic Designing",1000000,100000,120000,880000
+Aman,Verma,Male,Nagpur,MCA,5,Software Engineer,IT,500000,"Python, Graphic Designing",610000,110000,73200,536800
+Rohan,Joshi,Male,Nashik,MCA,4,HR Executive,HR,900000,"Excel, Graphic Designing",1080000,180000,129600,950400
+Karan,Deshmukh,Male,Nashik,B.Sc,3,Accountant,Finance,800000,"Excel, Graphic Designing",950000,150000,114000,836000
+Imran,Ansari,Male,Pune,MBA,1,Data Analyst,Analytics,850000,"Python, Excel",970000,120000,116400,853600
+Sahil,Naik,Male,Nashik,BCA,4,Sales Executive,Sales,650000,"Python, Graphic Designing",820000,170000,98400,721600
+Priya,Kulkarni,Male,Pune,BCA,7,Software Engineer,IT,350000,"Python, Graphic Designing",490000,140000,58800,431200
+Sneha,Gupta,Female,Pune,B.Tech,4,HR Executive,HR,600000,"Python, Excel",700000,100000,84000,616000
+Ananya,Yadav,Female,Aurangabad,B.Tech,8,Accountant,Finance,700000,"Python, Graphic Designing",800000,100000,96000,704000
+Pooja,Pawar,Female,Nashik,MBA,10,Data Analyst,Analytics,900000,"Python, Java",1040000,140000,124800,915200
+Neha,Mishra,Female,Pune,B.Sc,1,Sales Executive,Sales,850000,"Python, Excel",1020000,170000,122400,897600
+Aisha,Shaikh,Female,Nashik,MBA,3,Software Engineer,IT,400000,"Python, Graphic Designing",570000,170000,68400,501600
+Zoya,Kazi,Female,Nashik,B.Tech,6,HR Executive,HR,500000,"Excel, Graphic Designing",580000,80000,69600,510400
+Meera,Pathan,Female,Nagpur,BCA,7,Accountant,Finance,500000,"Python, Java",590000,90000,70800,519200
+Kavya,Shaikh,Female,Nashik,BCA,4,Data Analyst,Analytics,850000,"Excel, Java",1010000,160000,121200,888800
+Nisha,Tamboli,Female,Mumbai,BCA,8,Sales Executive,Sales,450000,"Excel, Java",630000,180000,75600,554400
+Farhan,Shaikh,Female,Nagpur,B.Sc,5,Software Engineer,IT,600000,"Python, Java",730000,130000,87600,642400
+Rehan,Qureshi,Female,Mumbai,MBA,4,HR Executive,HR,750000,"Excel, Java",850000,100000,102000,748000
+Sameer,Syed,Female,Nashik,BCA,10,Accountant,Finance,800000,"Python, Excel",890000,90000,106800,783200
